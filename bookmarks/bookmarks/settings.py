@@ -61,9 +61,23 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+SOCIAL_AUTH_FACEBOOK_KEY = '1723291867913873'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '7f9e7d67a1b62ba55fb675e74379d3f9'  # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_TWITTER_KEY = 'ltXbwomVoYEPZ0HomnTdo5Dwb'  # Twitter Consumer ID
+SOCIAL_AUTH_TWITTER_SECRET = 'mdihrVZHDF33Fa1eJNj37Baa8z3qvnBmufKyk2LUtLfRmsiAQM'  # Twitter Consumer Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '27578514102-fhu4rv5u4kj98i7m8foqi8hr2thmhg2i.apps.googleusercontent.com'  # Google Consumer ID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Tftc-rGjwnHu0wIKOj2ZawQF'  # Google Consumer Secret
+
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.google.GoogleOAuth2',
 )
 
 ROOT_URLCONF = 'bookmarks.urls'
