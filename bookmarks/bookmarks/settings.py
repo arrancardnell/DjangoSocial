@@ -33,6 +33,7 @@ SECRET_KEY = 'z6gkxtu#t(f&kefj$i@obj9ub(!()jz@=4e+dp6dl8%1u^ji8c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+THUMBNAIL_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -42,6 +43,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'account',
     'images',
+    'sorl.thumbnail',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
