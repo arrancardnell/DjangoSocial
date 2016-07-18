@@ -88,5 +88,6 @@ def user_detail(request, username):
                              is_active=True)
     return render(request,
                   'account/user/detail.html',
-                  {'section': 'people',
+                  {'section': 'people'
+                      ,
                    'user': user})
