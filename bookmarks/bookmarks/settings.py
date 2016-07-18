@@ -37,6 +37,10 @@ THUMBNAIL_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
 
 # Application definition
 
