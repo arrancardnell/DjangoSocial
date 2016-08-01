@@ -20,9 +20,10 @@ class Image(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
+        super(Image, self).save(*args, **kwargs)
         if not self.slug:
             self.slug = slugify(self.title)
-            super(Image, self).save(*args, **kwargs)
+            self.save()
 
     def get_absolute_url(self):
         return reverse('images:detail', args=[self.id, self.slug])
